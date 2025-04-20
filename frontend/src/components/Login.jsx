@@ -23,7 +23,7 @@ const Login = () => {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/api/login', { email, password });
+            const response = await axios.post('https://digitaldinner.onrender.com/api/login', { email, password });
             const { token } = response.data;
             const decoded = parseJwt(token);
             const userId = decoded?.id || null;

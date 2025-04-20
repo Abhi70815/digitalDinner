@@ -13,7 +13,7 @@ const Order = () => {
                 return;
             }
             try {
-                const response = await axios.get(`http://localhost:5000/api/orders/${user.userId}`);
+                const response = await axios.get(`https://digitaldinner.onrender.com/api/orders/${user.userId}`);
                 setItems(response.data.orders || []);
                 const totalPrice = response.data.orders.reduce((acc, order) => acc + order.total, 0);
                 setTotal(totalPrice);

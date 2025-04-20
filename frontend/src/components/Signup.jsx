@@ -9,7 +9,7 @@ const Signup = () => {
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/signup', { name, email, password });
+            await axios.post('https://digitaldinner.onrender.com/api/signup', { name, email, password });
             alert('Signup successful! Please login.');
             setName('');
             setEmail('');

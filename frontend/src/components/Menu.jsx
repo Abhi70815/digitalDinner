@@ -11,7 +11,7 @@ const Menu = () => {
     useEffect(() => {
         const fetchMenuItems = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/menu');
+                const response = await axios.get('https://digitaldinner.onrender.com/api/menu');
                 setMenuItems(response.data);
             } catch (error) {
                 console.error('Error fetching menu items:', error);
@@ -36,7 +36,7 @@ const Menu = () => {
         }
         try {
             const items = orderItems.map(item => ({ itemId: item._id, quantity: 1 }));
-            await axios.post('http://localhost:5000/api/orders', { userId: user.userId, items, total });
+            await axios.post('https://digitaldinner.onrender.com/api/orders', { userId: user.userId, items, total });
             alert('Order placed successfully!');
             setOrderItems([]);
             setTotal(0);
